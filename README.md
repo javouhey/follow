@@ -1,7 +1,6 @@
 # tailog
 
 A partial clone of tail, the GNU command line utility.
-Currently it does not implement the -f (follow) feature.
 
 # Command line usage
 
@@ -26,14 +25,14 @@ the exit status code to 1.
 
 # How to compile
 
-* To produce the artifact __tailog-jar-with_dependencies.jar__, run
+* To produce the artifact __tailog-jar-with-dependencies.jar__, run
 > $ mvn package
 * To produce the javadoc, run
 > $ mvn javadoc:javadoc
 
 # Documentation
 
-* [javadoc](http://example.com/ "Javadoc")
+* [javadoc](http://raverun.com/projects/tailog/ "Javadoc")
 * Status of this code:
   + (BUG) There is still a bug which will split some lines into 2 lines.
   + (TODO) implement the -f follow feature.

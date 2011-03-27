@@ -36,7 +36,8 @@ the exit status code to 1.
 * Status of this code:
   + (BUG) There is still a bug which will split some lines into 2 lines.
   + (TODO) implement the -f follow feature.
-  + The program has only been tested with files up to 10MB in size on windows vista (cygwin) environment.
+  + (TODO) If no files are supplied, the program needs to read from stdin.
+  + (TEST) The program has only been tested with files up to 10MB in size on windows vista (cygwin) environment.
 
 # Licence
 

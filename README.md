@@ -20,8 +20,9 @@ Currently it does not implement the -f (follow) feature.
     --version                               output version information and exit
 
 
-The unix shell status code.
-
+This program will output an exit status code of 0 if everything is fine.
+If multiple files are provided; the failure of processing one file will change
+the exit status code to 1.
 
 # How to compile
 
@@ -33,6 +34,10 @@ The unix shell status code.
 # Documentation
 
 * [javadoc](http://example.com/ "Javadoc")
+* Status of this code:
+  + (BUG) There is still a bug which will split some lines into 2 lines.
+  + (TODO) implement the -f follow feature.
+  + The program has only been tested with files up to 10MB in size on windows vista (cygwin) environment.
 
 # Licence
 

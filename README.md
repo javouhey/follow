@@ -25,7 +25,7 @@ the exit status code to 1.
 
 # How to compile
 
-* To produce the artifact __tailog-jar-with-dependencies.jar__, run
+* To produce the artifact __tailog-jar-with-dependencies.jar__, run the following command. This jar will be produced in the __target__ directory if compilation is successfull.
 > $ mvn package
 * To produce the javadoc, run
 > $ mvn javadoc:javadoc

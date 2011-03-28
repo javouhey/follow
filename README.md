@@ -45,7 +45,6 @@ as well as '__\r\n__' (windows) and '__\n__' (unixes).
 
 * [javadoc](http://raverun.com/projects/tailog/ "Javadoc")
 * Status of this code:
-  + (BUG) There is still a bug which will split some lines into 2 lines.
   + (TODO) implement the -f follow feature.
   + (TODO) If no files are supplied, the program needs to read from stdin.
   + (TEST) The program has only been tested with files up to 10MB in size on windows vista (cygwin) environment.

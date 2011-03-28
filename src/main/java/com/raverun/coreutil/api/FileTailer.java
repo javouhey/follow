@@ -260,7 +260,7 @@ public final class FileTailer {
 
             BufferedReader reader = new BufferedReader( 
                 new InputStreamReader( 
-                    new ByteArrayInputStream( b ), Charset.forName( "UTF-8" ) 
+                    new ByteArrayInputStream( b ), Charset.forName( UTF8 ) 
                 )
             );
 
@@ -269,6 +269,15 @@ public final class FileTailer {
             while( (line = reader.readLine()) != null ) {
                 result.addLast( line );
                 debug( TAG_TASK, "readFully - line=[ " + line + " ]" );
+            }
+
+        // push back the top-most line
+            if( result.peekFirst() != null && result.size() > 1 ) {
+                String first   = result.pollFirst();
+                byte[] firstba = first.getBytes( UTF8 );
+                if( firstba.length > 0 ) {
+                    read[0] = read[0] - (firstba.length + 1);
+                }
             }
 
             return new LineReaderResult() {
@@ -339,7 +348,7 @@ public final class FileTailer {
 
                    offset += result.numberOfBytesRead();
                    debug( TAG_TASK, "===========offset= " + offset + "===================" );
-               }
+               }//while
 
                return sink;
            }
@@ -458,6 +467,7 @@ public final class FileTailer {
     @SuppressWarnings("unused")
     private final boolean _follow;
 
+    private final static String UTF8 = "UTF-8";
     private final static int CAPACITY = 1024;
     private final static String TAG_FILETAILER = "FileTailer";
     private final static String POISON_MESSAGE = new String("poison");
